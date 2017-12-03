@@ -3,17 +3,20 @@ $white: #FFFFFF;
 $black: #000000;
 
 $basecolor: #222222;
-$basecolor-light: #666666;
-$basecolor-lighter: #CCCCCC;
-$bgcolor: #F2F2F2;
+$basecolor-light: #AAAAAA;
+$basecolor-lighter: #EEEEEE;
+$bgcolor: #F4F7F9;
 
-$maincolor: #64FFDA;
+$maincolor: #26e2a7;
+
+$positive-color: $maincolor;
+$negative-color: #EF5350;
 
 // spaces
 $spacing: 8px;
 
 // typos
 $mainfont: "Barlow Semi Condensed", sans-serif;
-$weight-light: 300;
-$weight-normal: 400;
+$weight-light: 400;
+$weight-normal: 600;
 $weight-bold: 700;

@@ -59,18 +59,91 @@ input[type=number] {
 textarea {
   vertical-align: top; }
 
+.highlight-positive {
+  color: #26e2a7; }
+
+.highlight-negative {
+  color: #EF5350; }
+
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   line-height: 16px;
-  color: #222222; }
+  color: #222222;
+  background-color: #F4F7F9; }
 
-.currencyList-item {
-  background-color: #F2F2F2; }
-  .currencyList-item:last-child .currencyList-item-content {
-    border-bottom: 0; }
-  .currencyList-item-content {
-    border-bottom: solid 1px #CCCCCC;
-    padding: 16px 16px 16px 0;
-    margin-left: 16px; }
+.layout {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  border-right: solid 1px #EEEEEE;
+  border-left: solid 1px #EEEEEE;
+  background-color: #FFFFFF; }
+
+.currencyList {
+  width: 320px; }
+  .currencyList-item {
+    background-color: #F4F7F9;
+    border-right: solid 1px #EEEEEE; }
+    .currencyList-item:last-child .currencyList-item-content {
+      border-bottom: 0; }
+    .currencyList-item.active {
+      background-color: #FFFFFF;
+      border-right: 0; }
+    .currencyList-item-content {
+      border-bottom: solid 1px #EEEEEE;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between; }
+    .currencyList-item-title {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 700;
+      width: 64px; }
+    .currencyList-item-chart {
+      border: solid 1px green;
+      width: 144px; }
+    .currencyList-item-value {
+      color: #26e2a7;
+      width: 64px;
+      text-align: right; }
+
+.currencyDetail {
+  margin: 24px;
+  width: 100%; }
+  .currencyDetail-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: #AAAAAA;
+    font-weight: 400;
+    padding-bottom: 8px;
+    border-bottom: solid 1px #EEEEEE; }
+  .currencyDetail-info-rate {
+    font-weight: 600;
+    padding-right: 8px; }
+  .currencyDetail-info-value {
+    font-size: 40px;
+    line-height: 42px;
+    font-weight: 400;
+    color: #222222;
+    margin-bottom: 8px; }
+  .currencyDetail-data {
+    text-align: right; }
+    .currencyDetail-data-title {
+      color: #222222;
+      font-weight: 600; }
+  .currencyDetail-disclaimer {
+    color: #AAAAAA;
+    font-weight: 400; }
+    .currencyDetail-disclaimer-title {
+      font-size: 18px;
+      color: #222222;
+      font-weight: 600;
+      border-bottom: solid 1px #EEEEEE;
+      padding-bottom: 8px;
+      margin-bottom: 8px; }
+  .currencyDetail-chart {
+    margin: 32px 0;
+    border: solid 1px red; }
