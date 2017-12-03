@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Line } from 'react-chartjs-2';
 import MarketList from './MarketList';
 import Button from './Button';
 import currenciesList from "../currenciesList.json";
@@ -6,6 +7,33 @@ import '../styles/App.css';
 
 class App extends Component {
   render() {
+    const chartData = {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [{
+        data: [12, 19, 3, 5, 2, 3],
+        lineTension: 0,
+        backgroundColor: 'transparent',
+        borderColor: '#26e2a7',
+        borderWidth: 2,
+        pointBorderColor: 'transparent',
+      }]
+    };
+    const chartOptions = {
+      legend: {
+        display: false
+      },
+      tooltips:{
+        enabled: false
+      },
+      scales: {
+        xAxes: [{
+          display: false
+        }],
+        yAxes: [{
+          display: false
+        }]
+      }
+    }
     return (
       <div className="layout">
         {/* <MarketList
@@ -17,21 +45,27 @@ class App extends Component {
             <li className="currencyList-item">
               <ul className="currencyList-item-content">
                   <li className="currencyList-item-title">ASD</li>
-                  <li className="currencyList-item-chart">chart</li>
+                  <li className="currencyList-item-chart">
+                    <Line height={60} data={chartData} options={chartOptions} />
+                  </li>
                   <li className="currencyList-item-value">324.3€</li>
               </ul>
             </li>
             <li className="currencyList-item active">
               <ul className="currencyList-item-content">
                   <li className="currencyList-item-title">WADUS</li>
-                  <li className="currencyList-item-chart">chart</li>
+                  <li className="currencyList-item-chart">
+                  <Line height={60} data={chartData} options={chartOptions} />
+                  </li>
                   <li className="currencyList-item-value">324.3€</li>
               </ul>
             </li>
             <li className="currencyList-item">
               <ul className="currencyList-item-content">
                   <li className="currencyList-item-title">EU</li>
-                  <li className="currencyList-item-chart">chart</li>
+                  <li className="currencyList-item-chart">
+                  <Line height={60} data={chartData} options={chartOptions} />
+                  </li>
                   <li className="currencyList-item-value">324.3€</li>
               </ul>
             </li>
@@ -39,7 +73,7 @@ class App extends Component {
         </aside>
         <section className="currencyDetail">
           <header className="currencyDetail-header">
-            <section class="currencyDetail-info">
+            <section className="currencyDetail-info">
               <h3 className="currencyDetail-info-value">234.40€</h3>
               <p>
                 <span className="currencyDetail-info-rate highlight-positive">5.17 (2.24%)</span>
@@ -52,7 +86,7 @@ class App extends Component {
             </section>
           </header>
           <section className="currencyDetail-chart">
-            chart
+            <Line data={chartData} options={chartOptions} />
           </section>
           <footer className="currencyDetail-footer">
             <section className="currencyDetail-disclaimer">

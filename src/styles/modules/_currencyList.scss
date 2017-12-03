@@ -16,6 +16,7 @@
       padding: $spacing*3;
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
 
     &-title {
@@ -26,7 +27,6 @@
     }
 
     &-chart {
-      border: solid 1px green;
       width: $spacing*18;
     }
 

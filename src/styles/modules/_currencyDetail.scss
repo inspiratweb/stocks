@@ -50,6 +50,9 @@
 
   &-chart {
     margin: $spacing*4 0;
-    border: solid 1px red;
+
+    canvas {
+      width: 100%!important;
+    }
   }
 }
