@@ -1,1 +1,15 @@
-@import './components/Button.scss';
+// base
+@import './base/reset';
+
+// utils
+@import './utils/vars';
+
+// pages
+@import './pages/common';
+
+// modules
+@import './modules/currencyList';
+@import './modules/currencyDetail';
+
+// components
+@import './components/Button';

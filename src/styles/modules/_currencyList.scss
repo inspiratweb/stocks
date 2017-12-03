@@ -1,0 +1,14 @@
+.currencyList {
+  &-item {
+    background-color: $bgcolor;
+    &:last-child &-content{
+      border-bottom: 0;
+    }
+    
+    &-content {
+      border-bottom: solid 1px $basecolor-lighter;
+      padding: $spacing*2 $spacing*2 $spacing*2 0;
+      margin-left: $spacing*2;
+    }
+  }
+}
