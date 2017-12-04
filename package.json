@@ -7,10 +7,13 @@
     "node-sass-chokidar": "^0.0.3",
     "react": "^16.2.0",
     "react-chartjs-2": "^2.6.4",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
