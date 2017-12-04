@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 import MarketList from './MarketList';
 import Button from './Button';
-import currenciesList from "../currenciesList.json";
+import currenciesOrdered from "../currenciesOrdered.json";
 import '../styles/App.css';
 
 class App extends Component {
@@ -37,11 +37,14 @@ class App extends Component {
     return (
       <div className="layout">
         {/* <MarketList
-          endpoint={currenciesList}
+          endpoint={currenciesOrdered}
         />
         <Button /> */}
         <aside>
-          <ul className="currencyList">
+          <MarketList
+            endpoint={currenciesOrdered}
+          />
+          {/* <ul className="currencyList">
             <li className="currencyList-item">
               <ul className="currencyList-item-content">
                   <li className="currencyList-item-title">ASD</li>
@@ -69,7 +72,7 @@ class App extends Component {
                   <li className="currencyList-item-value">324.3€</li>
               </ul>
             </li>
-          </ul>
+          </ul> */}
         </aside>
         <section className="currencyDetail">
           <header className="currencyDetail-header">

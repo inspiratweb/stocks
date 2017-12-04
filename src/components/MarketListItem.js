@@ -13,11 +13,22 @@ class MarketListItem extends Component {
   }
 
   render() {
+    const { code, values } = this.props;
+    console.log(values);
+
     return (
-      <li onClick={this.handleClick}>
-        {this.props.code}
-        {this.props.current}
-        {this.props.last}
+      <li
+        className="currencyList-item"
+        onClick={this.handleClick}
+      >
+        <ul className="currencyList-item-content">
+          <li className="currencyList-item-title">{code}</li>
+          <li className="currencyList-item-chart">
+            chart
+            {/* <Line height={60} data={chartData} options={chartOptions} /> */}
+          </li>
+          <li className="currencyList-item-value">324.3€</li>
+        </ul>
       </li>
     );
   }
@@ -25,7 +36,7 @@ class MarketListItem extends Component {
 
 MarketListItem.propTypes = {
   code: PropTypes.string.isRequired,
-  current: PropTypes.number.isRequired,
-  last: PropTypes.number.isRequired,
+  values: PropTypes.object,
 };
+
 export default MarketListItem;
