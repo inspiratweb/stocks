@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ChartLine from './ChartLine';
 
 class MarketListItem extends Component {
   constructor() {
@@ -12,9 +13,36 @@ class MarketListItem extends Component {
     return <button>asdasd</button>;
   }
 
+  getValueFeedback() {
+    const { values } = this.props;
+    const currentValue = values[Object.keys(values).length-1];
+    const lastWeekValue = values[0];
+    const feedback = currentValue >= lastWeekValue ? 'positive' : 'negative';
+
+    return { currentValue, lastWeekValue, feedback };
+  }
+
+  renderLastValue(value, feedback) {
+    return (
+      <li className={`currencyList-item-value highlight-${feedback}`}>
+        {value}€
+      </li>
+    );
+  }
+
+  renderChart(values, feedback) {
+    return (
+      <ChartLine
+        height={60}
+        values={values}
+        feedback={feedback}
+      />
+    );
+  }
+
   render() {
     const { code, values } = this.props;
-    console.log(values);
+    const valuesFeedback = this.getValueFeedback();
 
     return (
       <li
@@ -24,10 +52,9 @@ class MarketListItem extends Component {
         <ul className="currencyList-item-content">
           <li className="currencyList-item-title">{code}</li>
           <li className="currencyList-item-chart">
-            chart
-            {/* <Line height={60} data={chartData} options={chartOptions} /> */}
+            {this.renderChart(values, valuesFeedback.feedback)}
           </li>
-          <li className="currencyList-item-value">324.3€</li>
+          {this.renderLastValue(valuesFeedback.currentValue, valuesFeedback.feedback)}
         </ul>
       </li>
     );
@@ -36,6 +63,7 @@ class MarketListItem extends Component {
 
 MarketListItem.propTypes = {
   code: PropTypes.string.isRequired,
+  name: PropTypes.string,
   values: PropTypes.object,
 };
 

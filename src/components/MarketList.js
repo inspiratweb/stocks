@@ -10,7 +10,8 @@ class MarketList extends Component {
       <MarketListItem
         key={key}
         code={key}
-        values={endpoint[key]}
+        name={endpoint[key].name}
+        values={endpoint[key].rates}
       />
     ));
   }
