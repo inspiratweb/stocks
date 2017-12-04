@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import MarketList from './MarketList';
+import CurrencyList from './CurrencyList';
+import CurrencyDetail from './CurrencyDetail';
 import Button from './Button';
 import currenciesOrdered from "../currenciesOrdered.json";
 import '../styles/App.css';
@@ -9,36 +10,11 @@ class App extends Component {
     return (
       <div className="layout">
         <aside>
-          <MarketList
+          <CurrencyList
             endpoint={currenciesOrdered}
           />
         </aside>
-        <section className="currencyDetail">
-          <header className="currencyDetail-header">
-            <section className="currencyDetail-info">
-              <h3 className="currencyDetail-info-value">234.40€</h3>
-              <p>
-                <span className="currencyDetail-info-rate highlight-positive">5.17 (2.24%)</span>
-                TODAY
-              </p>
-            </section>
-            <section className="currencyDetail-data">
-              <p className="currencyDetail-data-title">WADUS</p>
-              <p>wadus complete name</p>
-            </section>
-          </header>
-          <section className="currencyDetail-chart">
-            {/* <Line data={chartData} options={chartOptions} /> */}
-          </section>
-          <footer className="currencyDetail-footer">
-            <section className="currencyDetail-disclaimer">
-              <h4 className="currencyDetail-disclaimer-title">About</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <p>Illum quidem excepturi hic explicabo doloremque architecto reprehenderit, corrupti error ipsa aut numquam aliquid</p>
-              <p>Doloremque quam et itaque quibusdam necessitatibus officiis voluptate.</p>
-            </section>
-          </footer>
-        </section>
+        <CurrencyDetail />
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ChartLine from './ChartLine';
 
-class MarketListItem extends Component {
+class CurrencyListItem extends Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
@@ -61,10 +61,10 @@ class MarketListItem extends Component {
   }
 }
 
-MarketListItem.propTypes = {
+CurrencyListItem.propTypes = {
   code: PropTypes.string.isRequired,
   name: PropTypes.string,
   values: PropTypes.object,
 };
 
-export default MarketListItem;
+export default CurrencyListItem;

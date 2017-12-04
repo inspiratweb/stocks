@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MarketListItem from './MarketListItem';
+import CurrencyListItem from './CurrencyListItem';
 
-class MarketList extends Component {
+class CurrencyList extends Component {
   renderList() {
     const { endpoint } = this.props;
 
     return Object.keys(endpoint).map((key, index) => (
-      <MarketListItem
+      <CurrencyListItem
         key={key}
         code={key}
         name={endpoint[key].name}
@@ -25,8 +25,8 @@ class MarketList extends Component {
   }
 }
 
-MarketList.propTypes = {
+CurrencyList.propTypes = {
   endpoint: PropTypes.object,
 };
 
-export default MarketList;
+export default CurrencyList;
