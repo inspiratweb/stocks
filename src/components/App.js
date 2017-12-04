@@ -5,13 +5,28 @@ import Button from './Button';
 import '../styles/App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    
+    this.state = { selectedCurrency: '' };
+    this.selectedCurrency = this.selectedCurrency.bind(this);
+  }
+
+  selectedCurrency(key) {
+    this.setState({ selectedCurrency: key });
+  }
+
   render() {
     return (
       <div className="layout">
         <aside>
-          <CurrencyList />
+          <CurrencyList
+            selectedCurrency={this.selectedCurrency}
+          />
         </aside>
-        <CurrencyDetail />
+        <CurrencyDetail
+          selectedCurrency={this.state.selectedCurrency}
+        />
       </div>
     );
   }

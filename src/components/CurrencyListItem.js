@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ChartLine from './ChartLine';
+import getValueFeedback from '../lib/getValueFeedback';
 
 class CurrencyListItem extends Component {
   constructor() {
@@ -8,18 +9,8 @@ class CurrencyListItem extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    console.log('hola');
-    return <button>asdasd</button>;
-  }
-
-  getValueFeedback() {
-    const { values } = this.props;
-    const currentValue = values[Object.keys(values).length-1];
-    const lastWeekValue = values[0];
-    const feedback = currentValue >= lastWeekValue ? 'positive' : 'negative';
-
-    return { currentValue, lastWeekValue, feedback };
+  handleClick() {
+    this.props.selectedCurrency(this.props.code);
   }
 
   renderLastValue(value, feedback) {
@@ -42,7 +33,7 @@ class CurrencyListItem extends Component {
 
   render() {
     const { code, values } = this.props;
-    const valuesFeedback = this.getValueFeedback();
+    const valuesFeedback = getValueFeedback(values);
 
     return (
       <li
@@ -65,6 +56,7 @@ CurrencyListItem.propTypes = {
   code: PropTypes.string.isRequired,
   name: PropTypes.string,
   values: PropTypes.object,
+  selectedCurrency: PropTypes.func,
 };
 
 export default CurrencyListItem;

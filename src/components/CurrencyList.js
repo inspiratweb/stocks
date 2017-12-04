@@ -5,7 +5,7 @@ import CurrencyListItem from './CurrencyListItem';
 
 class CurrencyList extends Component {
   renderList() {
-    const { endpoint: { currencies } } = this.props;
+    const { endpoint: { currencies }, selectedCurrency } = this.props;
 
     return Object.keys(currencies).map((key, index) => (
       <CurrencyListItem
@@ -13,6 +13,7 @@ class CurrencyList extends Component {
         code={key}
         name={currencies[key].name}
         values={currencies[key].rates}
+        selectedCurrency={selectedCurrency}
       />
     ));
   }
@@ -28,6 +29,7 @@ class CurrencyList extends Component {
 
 CurrencyList.propTypes = {
   endpoint: PropTypes.object,
+  selectedCurrency: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
