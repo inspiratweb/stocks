@@ -1,14 +1,19 @@
 .currencyList {
   width: $spacing*40;
   &-item {
+    cursor: pointer;
     background-color: $bgcolor;
     border-right: solid 1px $basecolor-lighter;
+    transition: background-color 0.4s ease;
     &:last-child &-content{
       border-bottom: 0;
     }
     &.active {
       background-color: $white;
       border-right: 0;
+    }
+    &:hover {
+      background-color: darken($bgcolor, 2%);
     }
     
     &-content {

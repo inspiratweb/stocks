@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ChartLine from './ChartLine';
 import getValueFeedback from '../lib/getValueFeedback';
+import BlankSlate from './BlankSlate';
 
 class CurrencyDetail extends Component {
   renderProgression(valuesFeedback) {
@@ -45,7 +46,9 @@ class CurrencyDetail extends Component {
       return (
         // Showing blank state
         <section className="currencyDetail">
-          <div>BLANK</div>
+          <BlankSlate
+            copy="Aquí no hay nada. Pincha en cualquier dato de la izquierda para ver su detalle."
+          />
         </section>
       )
     }
