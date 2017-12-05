@@ -10,10 +10,7 @@ class CurrencyDetail extends Component {
     const className = `currencyDetail-info-rate highlight-${valuesFeedback.feedback}`;
 
     return (
-      <p>
-        <span className={className}>{rating} ({ratingPercent}%)</span>
-        TODAY
-      </p>
+      <p><span className={className}>{rating} ({ratingPercent}%)</span>TODAY</p>
     )
   }
 
@@ -59,9 +56,12 @@ class CurrencyDetail extends Component {
       <footer className="currencyDetail-footer">
         <section className="currencyDetail-disclaimer">
           <h4 className="currencyDetail-disclaimer-title">About</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p>Illum quidem excepturi hic explicabo doloremque architecto reprehenderit, corrupti error ipsa aut numquam aliquid</p>
-          <p>Doloremque quam et itaque quibusdam necessitatibus officiis voluptate.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus distinctio deleniti odit quidem accusantium a mollitia, voluptates cupiditate tenetur consequuntur soluta eos, ad voluptatem eum omnis vero illum nobis corrupti.
+          </p>
+          <p>Soluta quaerat sed maiores beatae, magnam facere cum consectetur nam velit ipsum dolore, iste, quis, incidunt eius. Laboriosam iure vitae, quos nihil, quae dolores mollitia numquam eum tenetur iusto quaerat!
+          </p>
+          <p>Doloribus ex dignissimos reprehenderit provident. Minima delectus, neque quos officia mollitia consequatur. Rem eius, ex placeat! Aspernatur nesciunt consequuntur in magni, hic reprehenderit iure molestias, fuga culpa, non quia repellat.
+          </p>
         </section>
       </footer>
     );
