@@ -8,12 +8,12 @@ class App extends Component {
   constructor() {
     super();
     
-    this.state = { selectedCurrency: '' };
+    this.state = { selectedCurrency: null };
     this.selectedCurrency = this.selectedCurrency.bind(this);
   }
 
-  selectedCurrency(key) {
-    this.setState({ selectedCurrency: key });
+  selectedCurrency(currency) {
+    this.setState({ selectedCurrency: currency });
   }
 
   render() {

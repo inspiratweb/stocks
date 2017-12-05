@@ -10,7 +10,8 @@ class CurrencyListItem extends Component {
   }
 
   handleClick() {
-    this.props.selectedCurrency(this.props.code);
+    const { code, name, values } = this.props;
+    this.props.selectedCurrency({ code, name, values });
   }
 
   renderLastValue(value, feedback) {
