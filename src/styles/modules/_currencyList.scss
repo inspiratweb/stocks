@@ -10,6 +10,7 @@
     &.active {
       background-color: $white;
       border-right: 0;
+      pointer-events: none;
     }
     &:hover {
       background-color: darken($bgcolor, 2%);

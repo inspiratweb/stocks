@@ -99,7 +99,8 @@ body {
     border-bottom: 0; }
   .currencyList-item.active {
     background-color: #FFFFFF;
-    border-right: 0; }
+    border-right: 0;
+    pointer-events: none; }
   .currencyList-item:hover {
     background-color: #edf2f5; }
   .currencyList-item-content {

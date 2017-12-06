@@ -32,13 +32,19 @@ class CurrencyListItem extends Component {
     );
   }
 
+  renderItemClassName() {
+    let className = 'currencyList-item';
+    className += this.props.selected ? ' active' : '';
+    return className;
+  }
+
   render() {
     const { code, values } = this.props;
     const valuesFeedback = getValueFeedback(values);
 
     return (
       <li
-        className="currencyList-item"
+        className={this.renderItemClassName()}
         onClick={this.handleClick}
       >
         <ul className="currencyList-item-content">
@@ -58,6 +64,7 @@ CurrencyListItem.propTypes = {
   name: PropTypes.string,
   values: PropTypes.object,
   selectedCurrency: PropTypes.func,
+  selected: PropTypes.bool,
 };
 
 export default CurrencyListItem;
