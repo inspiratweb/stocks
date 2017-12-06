@@ -19,14 +19,16 @@ class App extends Component {
   render() {
     return (
       <div className="layout">
-        <aside>
+        <aside className="layout-aside">
           <CurrencyList
             selectedCurrency={this.selectedCurrency}
           />
         </aside>
-        <CurrencyDetail
-          selectedCurrency={this.state.selectedCurrency}
-        />
+        <div className="layout-main">
+          <CurrencyDetail
+            selectedCurrency={this.state.selectedCurrency}
+          />
+        </div>
       </div>
     );
   }

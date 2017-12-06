@@ -74,47 +74,53 @@ body {
   background-color: #F4F7F9; }
 
 .layout {
-  display: flex;
   margin: 0 auto;
+  min-height: 100vh;
   max-width: 1200px;
   border-right: solid 1px #EEEEEE;
   border-left: solid 1px #EEEEEE;
   background-color: #FFFFFF; }
+  .layout-aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    width: 320px; }
+  .layout-main {
+    padding-left: 320px;
+    width: 100%; }
 
-.currencyList {
-  width: 320px; }
-  .currencyList-item {
-    cursor: pointer;
-    background-color: #F4F7F9;
-    border-right: solid 1px #EEEEEE;
-    transition: background-color 0.4s ease; }
-    .currencyList-item:last-child .currencyList-item-content {
-      border-bottom: 0; }
-    .currencyList-item.active {
-      background-color: #FFFFFF;
-      border-right: 0; }
-    .currencyList-item:hover {
-      background-color: #edf2f5; }
-    .currencyList-item-content {
-      border-bottom: solid 1px #EEEEEE;
-      padding: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center; }
-    .currencyList-item-title {
-      text-transform: uppercase;
-      font-size: 16px;
-      font-weight: 700;
-      width: 64px; }
-    .currencyList-item-chart {
-      width: 144px; }
-    .currencyList-item-value {
-      width: 64px;
-      text-align: right; }
+.currencyList-item {
+  cursor: pointer;
+  background-color: #F4F7F9;
+  border-right: solid 1px #EEEEEE;
+  transition: background-color 0.4s ease; }
+  .currencyList-item:last-child .currencyList-item-content {
+    border-bottom: 0; }
+  .currencyList-item.active {
+    background-color: #FFFFFF;
+    border-right: 0; }
+  .currencyList-item:hover {
+    background-color: #edf2f5; }
+  .currencyList-item-content {
+    border-bottom: solid 1px #EEEEEE;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .currencyList-item-title {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    width: 64px; }
+  .currencyList-item-chart {
+    width: 144px; }
+  .currencyList-item-value {
+    width: 64px;
+    text-align: right; }
 
 .currencyDetail {
-  margin: 24px;
-  width: 100%; }
+  padding: 24px; }
   .currencyDetail-header {
     display: flex;
     align-items: flex-end;
@@ -175,7 +181,7 @@ body {
     left: 15%; } }
 
 .blankSlate {
-  margin-top: 40%;
+  margin-top: 100px;
   text-align: center;
   font-size: 16px;
   line-height: 18px;

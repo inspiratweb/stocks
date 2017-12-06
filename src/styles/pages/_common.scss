@@ -6,12 +6,3 @@ body {
   color: $basecolor;
   background-color: $bgcolor;
 }
-
-.layout {
-  display: flex;
-  margin: 0 auto;
-  max-width: $spacing*150;
-  border-right: solid 1px $basecolor-lighter;
-  border-left: solid 1px $basecolor-lighter;
-  background-color: $white;
-}

@@ -1,0 +1,21 @@
+.layout {
+  margin: 0 auto;
+  min-height: 100vh;  
+  max-width: $spacing*150;
+  border-right: solid 1px $basecolor-lighter;
+  border-left: solid 1px $basecolor-lighter;
+  background-color: $white;
+
+  &-aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    width: $spacing*40;
+  }
+
+  &-main {
+    padding-left: $spacing*40;
+    width: 100%;
+  }
+}
