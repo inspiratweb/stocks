@@ -4,16 +4,6 @@ import ChartLine from './ChartLine';
 import getValueFeedback from '../lib/getValueFeedback';
 
 class CurrencyListItem extends Component {
-  constructor() {
-    super();
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    const { code, name, values } = this.props;
-    this.props.selectedCurrency({ code, name, values });
-  }
-
   renderLastValue(value, feedback) {
     return (
       <li className={`currencyList-item-value highlight-${feedback}`}>
@@ -39,13 +29,13 @@ class CurrencyListItem extends Component {
   }
 
   render() {
-    const { code, values } = this.props;
+    const { code, values, onItemClick } = this.props;
     const valuesFeedback = getValueFeedback(values);
 
     return (
       <li
         className={this.renderItemClassName()}
-        onClick={this.handleClick}
+        onClick={() => onItemClick(code)}
       >
         <ul className="currencyList-item-content">
           <li className="currencyList-item-title">{code}</li>
@@ -63,7 +53,7 @@ CurrencyListItem.propTypes = {
   code: PropTypes.string.isRequired,
   name: PropTypes.string,
   values: PropTypes.object,
-  selectedCurrency: PropTypes.func,
+  onItemClick: PropTypes.func.isRequired,
   selected: PropTypes.bool,
 };
 

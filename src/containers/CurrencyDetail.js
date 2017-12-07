@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ChartLine from './ChartLine';
+import { connect } from 'react-redux';
 import getValueFeedback from '../lib/getValueFeedback';
-import BlankSlate from './BlankSlate';
+import ChartLine from '../components/ChartLine';
+import BlankSlate from '../components/BlankSlate';
 
 class CurrencyDetail extends Component {
   renderProgression(valuesFeedback) {
@@ -16,10 +17,11 @@ class CurrencyDetail extends Component {
   }
 
   renderCurrencyDetailState() {
-    if (this.props.selectedCurrency) {
+    const { selectedCurrency } = this.props;
+
+    if (selectedCurrency) {
       // Showing selected detail
-      const { selectedCurrency } = this.props;
-      const valuesFeedback = getValueFeedback(selectedCurrency.values);
+      const valuesFeedback = getValueFeedback(selectedCurrency.rates);
 
       return (
         <section className="currencyDetail">
@@ -35,7 +37,7 @@ class CurrencyDetail extends Component {
           </header>
           <section className="currencyDetail-chart">
             <ChartLine
-              values={selectedCurrency.values}
+              values={selectedCurrency.rates}
               feedback={valuesFeedback.feedback}
             />
           </section>
@@ -79,4 +81,10 @@ CurrencyDetail.propTypes = {
   selectedCurrency: PropTypes.object,
 };
 
-export default CurrencyDetail;
+const mapStateToProps = (state) => ({
+  selectedCurrency: state.currencies.selected,
+});
+
+export default connect(
+  mapStateToProps,
+)(CurrencyDetail);
