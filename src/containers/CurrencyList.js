@@ -5,27 +5,39 @@ import { showCurrencyDetail } from '../actions';
 import CurrencyListItem from '../components/CurrencyListItem';
 
 class CurrencyList extends Component {
-  render() {
-    const { endpoint, handleClick } = this.props;
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+    this.state = { selectedCode: '' };
+  }
 
-    return Object.keys(endpoint).map((key, index) => (
+  handleClick(code) {
+    this.props.handleClick(code);
+    this.setState({ selectedCode: code });
+  }
+
+  render() {
+    const { currencyList } = this.props;
+
+    return Object.keys(currencyList).map((key, index) => (
       <CurrencyListItem
         key={key}
         code={key}
-        name={endpoint[key].name}
-        values={endpoint[key].rates}
-        onItemClick={handleClick}
+        name={currencyList[key].name}
+        values={currencyList[key].rates}
+        onItemClick={this.handleClick}
+        selected={key===this.state.selectedCode}
       />
     ));
   }
 }
 
 CurrencyList.propTypes = {
-  endpoint: PropTypes.object,
+  currencyList: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
-  endpoint: state.currencies.currencyList,
+  currencyList: state.currencies.currencyList,
 });
 
 const mapDispatchToProps = (dispatch) => ({
