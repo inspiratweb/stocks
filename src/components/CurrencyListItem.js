@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ChartLine from './ChartLine';
-import getValueFeedback from '../lib/getValueFeedback';
+import getValueFeedback from '../lib/valueFeedback';
 
 class CurrencyListItem extends Component {
   renderLastValue(value, feedback) {

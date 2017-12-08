@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import getValueFeedback from '../lib/getValueFeedback';
+import getValueFeedback from '../lib/valueFeedback';
 import ChartLine from '../components/ChartLine';
 import BlankSlate from '../components/BlankSlate';
 

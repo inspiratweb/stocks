@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Line } from 'react-chartjs-2';
-
+import { FEEDBACK } from '../lib/valueFeedback';
 
 class ChartLine extends Component {
   render() {
     const { values, feedback, height } = this.props;
-    const color = feedback === 'positive' ? '#26e2a7' : '#EF5350';
+    const color = feedback === FEEDBACK.POSITIVE.CLASSNAME
+      ? FEEDBACK.POSITIVE.COLOR
+      : FEEDBACK.NEGATIVE.COLOR;
     const chartData = {
       labels: Object.values(values),
       datasets: [{
