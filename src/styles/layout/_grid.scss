@@ -1,0 +1,18 @@
+// media queries definitions
+@mixin bp($point) {
+  $desktop-viewport: 990;
+  $tablet-viewport: 768;
+  $tablet: "(max-width: "+(($desktop-viewport)-1)+"px)";
+  $mobile: "(max-width: "+(($tablet-viewport)-1)+"px)";
+
+  @if ($point == tablet) {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  }
+  @else if ($point == mobile) {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  }
+}

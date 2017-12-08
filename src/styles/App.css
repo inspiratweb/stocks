@@ -65,14 +65,6 @@ textarea {
 .highlight-negative {
   color: #EF5350; }
 
-body {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  color: #222222;
-  background-color: #F4F7F9; }
-
 .layout {
   margin: 0 auto;
   min-height: 100vh;
@@ -89,6 +81,31 @@ body {
   .layout-main {
     padding-left: 320px;
     width: 100%; }
+
+@media only screen and (max-width: 767px) {
+  .mainWrapper {
+    overflow-x: hidden; }
+  .layout {
+    white-space: nowrap;
+    transition: transform 0.6s ease-in-out; }
+    .layout.showDetail {
+      transform: translateX(-100%); }
+    .layout-aside {
+      position: static;
+      display: inline-block;
+      width: 100%; }
+    .layout-main {
+      padding-left: 0;
+      display: inline-block;
+      vertical-align: top; } }
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #222222;
+  background-color: #F4F7F9; }
 
 .currencyList-item {
   cursor: pointer;

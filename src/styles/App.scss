@@ -5,11 +5,12 @@
 @import './utils/vars';
 @import './utils/helpers';
 
+// layout
+@import './layout/grid';
+@import './layout/common';
+
 // pages
 @import './pages/common';
-
-// layout
-@import './layout/common';
 
 // modules
 @import './modules/currencyList';
