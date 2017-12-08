@@ -9,9 +9,7 @@ class App extends Component {
     return (
       <div className="layout">
         <aside className="layout-aside">
-          <ul className="currencyList">
-            <CurrencyList />
-          </ul>
+          <CurrencyList />
         </aside>
         <div className="layout-main">
           <CurrencyDetail />

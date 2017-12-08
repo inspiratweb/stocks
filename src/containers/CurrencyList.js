@@ -16,7 +16,7 @@ class CurrencyList extends Component {
     this.setState({ selectedCode: code });
   }
 
-  render() {
+  renderCurrencyList() {
     const { currencyList } = this.props;
 
     return Object.keys(currencyList).map((key, index) => (
@@ -29,6 +29,14 @@ class CurrencyList extends Component {
         selected={key===this.state.selectedCode}
       />
     ));
+  }
+
+  render() {
+    return (
+      <ul className="currencyList">
+        {this.renderCurrencyList()}
+      </ul>
+    );
   }
 }
 
