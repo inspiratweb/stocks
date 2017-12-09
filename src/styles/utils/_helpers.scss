@@ -5,3 +5,23 @@
 .highlight-negative {
   color: $negative-color;
 }
+
+.arrow-back {
+  position: relative;
+  position: relative;
+  color: $maincolor;
+  display: block;
+  padding-left: $spacing*3;
+  cursor: pointer;
+  &:before {
+    content: "";
+    position: absolute;
+    transform: rotate(45deg);
+    left: 4px;
+    top: 4px;
+    width: 4px;
+    height: 4px;
+    border: solid 2px;
+    border-color: transparent transparent $maincolor $maincolor;
+  }
+}

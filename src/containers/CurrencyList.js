@@ -13,6 +13,7 @@ class CurrencyList extends Component {
 
   handleClick(code) {
     this.props.handleClick(code);
+    this.context.showDetail(true);
     this.setState({ selectedCode: code });
   }
 
@@ -42,6 +43,10 @@ class CurrencyList extends Component {
 
 CurrencyList.propTypes = {
   currencyList: PropTypes.object,
+};
+
+CurrencyList.contextTypes = {
+  showDetail: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({

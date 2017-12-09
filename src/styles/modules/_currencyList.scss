@@ -41,3 +41,15 @@
     }
   }
 }
+
+@include bp(mobile) {
+  .currencyList {
+    &-item {
+      border-right: 0;
+      &.active {
+        background-color: $bgcolor;
+        pointer-events: all;
+      }
+    }
+  }
+}

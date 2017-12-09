@@ -1,5 +1,6 @@
 .currencyDetail {
   padding: $spacing*3;
+  background: $white;
 
   &-header {
     display: flex;
@@ -53,6 +54,21 @@
 
     canvas {
       width: 100%!important;
+    }
+  }
+
+  &-back {
+    display: none;
+    padding: 0 0 $spacing*3 $spacing*3;
+    margin-bottom: $spacing*3;
+    border-bottom: solid 1px $basecolor-lighter;
+  }
+}
+
+@include bp(mobile) {
+  .currencyDetail {
+    &-back {
+      display: block;
     }
   }
 }

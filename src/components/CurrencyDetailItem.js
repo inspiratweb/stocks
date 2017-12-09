@@ -5,6 +5,15 @@ import ChartLine from '../components/ChartLine';
 import BlankSlate from '../components/BlankSlate';
 
 class CurrencyDetail extends Component {
+  constructor() {
+    super();
+    this.handleBackClick = this.handleBackClick.bind(this);
+  }
+
+  handleBackClick() {
+    this.context.showDetail(false);
+  }
+
   renderProgression(valuesFeedback) {
     const rating = Math.trunc((valuesFeedback.currentValue - valuesFeedback.lastWeekValue) * 10000) / 10000;
     const ratingPercent = Math.trunc((((valuesFeedback.currentValue / valuesFeedback.lastWeekValue) - 1) * 100) * 100) / 100;
@@ -24,6 +33,11 @@ class CurrencyDetail extends Component {
 
       return (
         <section className="currencyDetail">
+          <span
+            className="currencyDetail-back arrow-back"
+            onClick={this.handleBackClick}>
+              Back to list
+          </span>
           <header className="currencyDetail-header">
             <section className="currencyDetail-info">
               <h3 className="currencyDetail-info-value">{valuesFeedback.currentValue}€</h3>
@@ -78,6 +92,10 @@ class CurrencyDetail extends Component {
 
 CurrencyDetail.propTypes = {
   selectedCurrency: PropTypes.object,
+};
+
+CurrencyDetail.contextTypes = {
+  showDetail: PropTypes.func,
 };
 
 export default CurrencyDetail;
