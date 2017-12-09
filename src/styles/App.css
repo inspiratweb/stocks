@@ -207,6 +207,11 @@ body {
     padding: 0 0 24px 24px;
     margin-bottom: 24px;
     border-bottom: solid 1px #EEEEEE; }
+  .currencyDetail-actions {
+    margin-top: 32px;
+    text-align: right; }
+    .currencyDetail-actions > *:not(:last-child) {
+      margin-right: 8px; }
 
 @media only screen and (max-width: 767px) {
   .currencyDetail-back {
@@ -284,6 +289,31 @@ body {
       height: 12%;
       width: 44%;
       background-color: #26e2a7; }
+
+.button-primary, .button-secondary {
+  border: 0;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 128px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.4s linear; }
+
+.button-primary {
+  border-radius: 4px;
+  background-color: #26e2a7;
+  color: #FFFFFF; }
+  .button-primary:hover {
+    background-color: #1dd79c; }
+
+.button-secondary {
+  border-radius: 4px;
+  border: solid 1px #26e2a7;
+  color: #26e2a7; }
+  .button-secondary:hover {
+    background-color: rgba(38, 226, 167, 0.1); }
 
 @media only screen and (max-width: 767px) {
   .showDetail {

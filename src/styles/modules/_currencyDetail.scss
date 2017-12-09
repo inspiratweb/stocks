@@ -63,6 +63,15 @@
     margin-bottom: $spacing*3;
     border-bottom: solid 1px $basecolor-lighter;
   }
+
+  &-actions {
+    margin-top: $spacing*4;
+    text-align: right;
+
+    >*:not(:last-child) {
+      margin-right: $spacing;
+    }
+  }
 }
 
 @include bp(mobile) {

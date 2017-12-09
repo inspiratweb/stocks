@@ -1,0 +1,33 @@
+%button {
+  border: 0;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: $weight-normal;
+  text-align: center;
+  min-width: $spacing*16;
+  padding: 12px $spacing*2;
+  cursor: pointer;
+  transition: all $faster linear;
+}
+
+.button {
+  &-primary {
+    @extend %button;
+    border-radius: 4px;
+    background-color: $maincolor;
+    color: $white;
+    &:hover {
+      background-color: darken($maincolor, 4%);
+    }
+  }
+
+  &-secondary {
+    @extend %button;
+    border-radius: 4px;
+    border: solid 1px $maincolor;
+    color: $maincolor;
+    &:hover {
+      background-color: rgba($maincolor, 0.1);
+    }
+  }
+}

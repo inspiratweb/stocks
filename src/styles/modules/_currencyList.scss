@@ -3,7 +3,7 @@
     cursor: pointer;
     background-color: $bgcolor;
     border-right: solid 1px $basecolor-lighter;
-    transition: background-color 0.4s ease;
+    transition: background-color $faster ease;
     &:last-child &-content{
       border-bottom: 0;
     }

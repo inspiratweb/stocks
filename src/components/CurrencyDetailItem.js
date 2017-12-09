@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import getValueFeedback from '../lib/valueFeedback';
-import ChartLine from '../components/ChartLine';
-import BlankSlate from '../components/BlankSlate';
+import ChartLine from './ChartLine';
+import BlankSlate from './BlankSlate';
+import Button, { BUTTON } from './Button';
 
 class CurrencyDetail extends Component {
   constructor() {
@@ -55,6 +56,15 @@ class CurrencyDetail extends Component {
             />
           </section>
           {this.renderDisclaimer()}
+          <footer className="currencyDetail-actions">
+            <Button
+              type={BUTTON.TYPE.SECONDARY}>
+              Secondary
+            </Button>
+            <Button>
+              Primary
+            </Button>
+          </footer>
         </section>
       )
     } else {

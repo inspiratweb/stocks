@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CurrencyList from '../containers/CurrencyList';
 import CurrencyDetail from '../containers/CurrencyDetail';
-import Button from './Button';
 import '../styles/App.css';
 
 class App extends Component {

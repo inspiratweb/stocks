@@ -27,7 +27,7 @@
 
   .layout {
     white-space: nowrap;
-    transition: transform 0.4s ease-in-out;
+    transition: transform $faster ease-in-out;
 
     >* {
       white-space: normal;
