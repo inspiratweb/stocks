@@ -5,7 +5,7 @@ import ChartLine from './ChartLine';
 import BlankSlate from './BlankSlate';
 import Button, { BUTTON } from './Button';
 
-class CurrencyDetail extends Component {
+class CurrencyDetailItem extends Component {
   constructor() {
     super();
     this.handleBackClick = this.handleBackClick.bind(this);
@@ -16,13 +16,17 @@ class CurrencyDetail extends Component {
   }
 
   renderProgression(valuesFeedback) {
-    const rating = Math.trunc((valuesFeedback.currentValue - valuesFeedback.lastWeekValue) * 10000) / 10000;
-    const ratingPercent = Math.trunc((((valuesFeedback.currentValue / valuesFeedback.lastWeekValue) - 1) * 100) * 100) / 100;
+    const rating = Math.trunc((
+      valuesFeedback.currentValue - valuesFeedback.lastWeekValue
+    ) * 10000) / 10000;
+    const ratingPercent = Math.trunc((
+      ((valuesFeedback.currentValue / valuesFeedback.lastWeekValue) - 1) * 100
+    ) * 100) / 100;
     const className = `currencyDetail-info-rate highlight-${valuesFeedback.feedback}`;
 
     return (
       <p><span className={className}>{rating} ({ratingPercent}%)</span>TODAY</p>
-    )
+    );
   }
 
   renderCurrencyDetailState() {
@@ -36,8 +40,9 @@ class CurrencyDetail extends Component {
         <section className="currencyDetail">
           <span
             className="currencyDetail-back arrow-back"
-            onClick={this.handleBackClick}>
-              Back to list
+            onClick={this.handleBackClick}
+          >
+            Back to list
           </span>
           <header className="currencyDetail-header">
             <section className="currencyDetail-info">
@@ -58,7 +63,8 @@ class CurrencyDetail extends Component {
           {this.renderDisclaimer()}
           <footer className="currencyDetail-actions">
             <Button
-              type={BUTTON.TYPE.SECONDARY}>
+              type={BUTTON.TYPE.SECONDARY}
+            >
               Secondary
             </Button>
             <Button>
@@ -66,17 +72,16 @@ class CurrencyDetail extends Component {
             </Button>
           </footer>
         </section>
-      )
-    } else {
-      return (
-        // Showing blank state
-        <section className="currencyDetail">
-          <BlankSlate
-            copy="Aquí no hay nada. Pincha en cualquier dato de la izquierda para ver su detalle."
-          />
-        </section>
-      )
+      );
     }
+    return (
+      // Showing blank state
+      <section className="currencyDetail">
+        <BlankSlate
+          copy="Aquí no hay nada. Pincha en cualquier dato de la izquierda para ver su detalle."
+        />
+      </section>
+    );
   }
 
   renderDisclaimer() {
@@ -84,11 +89,20 @@ class CurrencyDetail extends Component {
       <footer className="currencyDetail-footer">
         <section className="currencyDetail-disclaimer">
           <h4 className="currencyDetail-disclaimer-title">About</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus distinctio deleniti odit quidem accusantium a mollitia, voluptates cupiditate tenetur consequuntur soluta eos, ad voluptatem eum omnis vero illum nobis corrupti.
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus distinctio
+            deleniti odit quidem accusantium a mollitia, voluptates cupiditate tenetur
+            consequuntur soluta eos, ad voluptatem eum omnis vero illum nobis corrupti.
           </p>
-          <p>Soluta quaerat sed maiores beatae, magnam facere cum consectetur nam velit ipsum dolore, iste, quis, incidunt eius. Laboriosam iure vitae, quos nihil, quae dolores mollitia numquam eum tenetur iusto quaerat!
+          <p>
+            Soluta quaerat sed maiores beatae, magnam facere cum consectetur nam velit ipsum
+            dolore, iste, quis, incidunt eius. Laboriosam iure vitae, quos nihil, quae dolores
+            mollitia numquam eum tenetur iusto quaerat!
           </p>
-          <p>Doloribus ex dignissimos reprehenderit provident. Minima delectus, neque quos officia mollitia consequatur. Rem eius, ex placeat! Aspernatur nesciunt consequuntur in magni, hic reprehenderit iure molestias, fuga culpa, non quia repellat.
+          <p>
+            Doloribus ex dignissimos reprehenderit provident. Minima delectus, neque quos officia
+            mollitia consequatur. Rem eius, ex placeat! Aspernatur nesciunt consequuntur in
+            magni, hic reprehenderit iure molestias, fuga culpa, non quia repellat.
           </p>
         </section>
       </footer>
@@ -100,12 +114,20 @@ class CurrencyDetail extends Component {
   }
 }
 
-CurrencyDetail.propTypes = {
-  selectedCurrency: PropTypes.object,
+CurrencyDetailItem.propTypes = {
+  selectedCurrency: PropTypes.shape({
+    code: PropTypes.string,
+    name: PropTypes.string,
+    rates: PropTypes.objectOf(PropTypes.number),
+  }),
 };
 
-CurrencyDetail.contextTypes = {
+CurrencyDetailItem.defaultProps = {
+  selectedCurrency: null,
+};
+
+CurrencyDetailItem.contextTypes = {
   showDetail: PropTypes.func,
 };
 
-export default CurrencyDetail;
+export default CurrencyDetailItem;

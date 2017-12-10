@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { showCurrencyDetail } from '../actions';
+import showCurrencyDetail from '../actions';
 import CurrencyListItem from '../components/CurrencyListItem';
 
 class CurrencyList extends Component {
@@ -20,14 +20,13 @@ class CurrencyList extends Component {
   renderCurrencyList() {
     const { currencyList } = this.props;
 
-    return Object.keys(currencyList).map((key, index) => (
+    return Object.keys(currencyList).map((key) => (
       <CurrencyListItem
         key={key}
         code={key}
-        name={currencyList[key].name}
         values={currencyList[key].rates}
         onItemClick={this.handleClick}
-        selected={key===this.state.selectedCode}
+        selected={key === this.state.selectedCode}
       />
     ));
   }
@@ -56,10 +55,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   handleClick: (code) => (
     dispatch(showCurrencyDetail(code))
-  )
+  ),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(CurrencyList);

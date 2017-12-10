@@ -51,10 +51,13 @@ class CurrencyListItem extends Component {
 
 CurrencyListItem.propTypes = {
   code: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  values: PropTypes.object,
+  values: PropTypes.objectOf(PropTypes.number).isRequired,
   onItemClick: PropTypes.func.isRequired,
   selected: PropTypes.bool,
+};
+
+CurrencyListItem.defaultProps = {
+  selected: false,
 };
 
 export default CurrencyListItem;

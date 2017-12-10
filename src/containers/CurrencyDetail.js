@@ -1,22 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CurrencyDetailItem from '../components/CurrencyDetailItem';
 
-class CurrencyDetail extends Component {
-  render() {
-    return <CurrencyDetailItem selectedCurrency={this.props.selectedCurrency} />
-  }
-}
+const CurrencyDetail = ({ selectedCurrency }) => (
+  <CurrencyDetailItem selectedCurrency={selectedCurrency} />
+);
 
 CurrencyDetail.propTypes = {
-  selectedCurrency: PropTypes.object,
+  selectedCurrency: PropTypes.shape({
+    code: PropTypes.string,
+    name: PropTypes.string,
+    rates: PropTypes.objectOf(PropTypes.number),
+  }),
+};
+
+CurrencyDetail.defaultProps = {
+  selectedCurrency: null,
 };
 
 const mapStateToProps = (state) => ({
   selectedCurrency: state.currencies.selected,
 });
 
-export default connect(
-  mapStateToProps,
-)(CurrencyDetail);
+export default connect(mapStateToProps)(CurrencyDetail);

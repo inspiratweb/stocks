@@ -18,7 +18,7 @@ class App extends Component {
   showDetail(state) {
     this.setState({ showDetail: state });
   }
-  
+
   renderDetailClassName() {
     const baseClass = 'layout';
     return this.state.showDetail ? `${baseClass} showDetail` : baseClass;
@@ -39,7 +39,7 @@ class App extends Component {
 }
 
 App.childContextTypes = {
-  showDetail: PropTypes.func
+  showDetail: PropTypes.func,
 };
 
 export default App;

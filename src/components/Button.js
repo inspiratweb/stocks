@@ -1,27 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 export const BUTTON = {
   TYPE: {
     PRIMARY: 'button-primary',
-    SECONDARY: 'button-secondary'
-  }
+    SECONDARY: 'button-secondary',
+  },
 };
 
-class Button extends Component {
-  render() {
-    return (
-      <button className={this.props.type}>{this.props.children}</button>
-    );
-  }
-}
+const Button = ({ type, children }) => (
+  <button className={type}>{children}</button>
+);
 
 Button.propTypes = {
   type: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 Button.defaultProps = {
   type: BUTTON.TYPE.PRIMARY,
+  children: false,
 };
 
 export default Button;
