@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">42.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/6</span>
+        <span class='fraction'>3/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">42.86% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/6</span>
+        <span class='fraction'>3/7</span>
       </div>
     </div>
   </div>
@@ -96,26 +96,16 @@
 51
 52
 53
-54</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+54
+55
+56
+57</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,12 +121,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,57 +155,59 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import PropTypes from 'prop-types';
 import { Line } from 'react-chartjs-2';
 import { FEEDBACK } from '../lib/valueFeedback';
 &nbsp;
-class ChartLine extends Component {
-<span class="fstat-no" title="function not covered" >  re</span>nder() {
-    const { values, feedback, height } = <span class="cstat-no" title="statement not covered" >this.props;</span>
-    const color = <span class="cstat-no" title="statement not covered" >feedback === FEEDBACK.POSITIVE.CLASSNAME</span>
-      ? FEEDBACK.POSITIVE.COLOR
-      : FEEDBACK.NEGATIVE.COLOR;
-    const chartData = <span class="cstat-no" title="statement not covered" >{</span>
-      labels: Object.values(values),
-      datasets: [{
-        data: Object.values(values),
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: color,
-        borderWidth: 2,
-        pointBorderColor: 'transparent',
-      }]
-    };
+const ChartLine = <span class="fstat-no" title="function not covered" >({</span> values, feedback, height }) =&gt; {
+  const color = <span class="cstat-no" title="statement not covered" >feedback === FEEDBACK.POSITIVE.CLASSNAME</span>
+    ? FEEDBACK.POSITIVE.COLOR
+    : FEEDBACK.NEGATIVE.COLOR;
 &nbsp;
-    const chartOptions = <span class="cstat-no" title="statement not covered" >{</span>
-      legend: {
-        display: false
-      },
-      tooltips:{
-        enabled: false
-      },
-      scales: {
-        xAxes: [{
-          display: false
-        }],
-        yAxes: [{
-          display: false
-        }]
-      }
-    };
+  const chartData = <span class="cstat-no" title="statement not covered" >{</span>
+    labels: Object.values(values),
+    datasets: [{
+      data: Object.values(values),
+      lineTension: 0,
+      backgroundColor: 'transparent',
+      borderColor: color,
+      borderWidth: 2,
+      pointBorderColor: 'transparent',
+    }],
+  };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
-      &lt;Line height={height} data={chartData} options={chartOptions} /&gt;
-    );
-  }
-}
+  const chartOptions = <span class="cstat-no" title="statement not covered" >{</span>
+    legend: {
+      display: false,
+    },
+    tooltips: {
+      enabled: false,
+    },
+    scales: {
+      xAxes: [{
+        display: false,
+      }],
+      yAxes: [{
+        display: false,
+      }],
+    },
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;Line height={height} data={chartData} options={chartOptions} /&gt;
+  );
+};
 &nbsp;
 ChartLine.propTypes = {
-  values: PropTypes.object,
+  values: PropTypes.objectOf(PropTypes.number).isRequired,
   feedback: PropTypes.string,
   height: PropTypes.number,
+};
+&nbsp;
+ChartLine.defaultProps = {
+  feedback: 'blue',
+  height: null,
 };
 &nbsp;
 export default ChartLine;
@@ -208,7 +217,7 @@ export default ChartLine;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 09 2017 23:51:10 GMT+0100 (CET)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Dec 10 2017 13:51:40 GMT+0100 (CET)
 </div>
 </div>
 <script src="../../prettify.js"></script>

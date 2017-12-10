@@ -4,12 +4,15 @@
   "private": true,
   "dependencies": {
     "chart.js": "^2.7.1",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "node-sass-chokidar": "^0.0.3",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-chartjs-2": "^2.6.4",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
+    "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2"
   },
   "devDependencies": {
@@ -28,5 +31,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom" : [
+      "src/*/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ]
   }
 }
