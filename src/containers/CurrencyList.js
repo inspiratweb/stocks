@@ -41,7 +41,10 @@ class CurrencyList extends Component {
 }
 
 CurrencyList.propTypes = {
-  currencyList: PropTypes.object,
+  currencyList: PropTypes.shape({
+    name: PropTypes.string,
+    rates: PropTypes.objectOf(PropTypes.number),
+  }).isRequired,
 };
 
 CurrencyList.contextTypes = {
@@ -62,3 +65,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(CurrencyList);
+
+export { CurrencyList as PureComponent };

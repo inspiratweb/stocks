@@ -24,3 +24,4 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(CurrencyDetail);
+export { CurrencyDetail as PureComponent };
